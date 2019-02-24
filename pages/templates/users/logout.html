@@ -1,0 +1,22 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block head %}
+<!-- Home page CSS -->
+<link href="{% static 'css/register.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<header class="bg">
+  {% csrf_token %}
+  <div class="container">
+    <h1>LOGOUT</h1>
+    <p>You are logged out</p>
+    <hr>
+     
+     </div>
+
+ </header>
+
+{% endblock %}

@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .addForm import Add_Form
-from .models import User, Contact
+from .addForm import Add_Form, RegisterForm
+from .models import Member, Contact
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 
 
@@ -21,3 +23,12 @@ def add(request):
 		form = Add_Form()
 	return render(request, 'add.html', {'form': form})	
 	
+def register(request):
+	form = UserCreationForm()
+	return render(request, 'users/register.html', {'form': form})
+
+def login(request):
+	return render(request, "login.html",{})
+
+def logout(request):
+	return render(request, "logout.html",{})

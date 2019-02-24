@@ -1,7 +1,8 @@
 from django.db import models
 
-class User(models.Model):
+class Member(models.Model):
     username = models.CharField(max_length=200)
+    psw = models.CharField(max_length=200)
     fullName = models.CharField(max_length=200)
     email = models.EmailField(max_length=254)
     facebook_account = models.CharField(max_length=200)
