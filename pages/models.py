@@ -9,6 +9,7 @@ class User(models.Model):
     Twitter_account = models.CharField(max_length=200)
     Github_account = models.CharField(max_length=200)
 
-
+class Contact(models.Model):
+	username_added = models.CharField(max_length=200)
 
 
