@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 
+
 def index(request):
 	return render(request, "index.html",{})
 
@@ -24,7 +25,15 @@ def add(request):
 	return render(request, 'add.html', {'form': form})	
 	
 def register(request):
-	form = UserCreationForm()
+	if request.method == "POST":
+		form = RegisterForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			messages.success(request, f'Account created for { username }!')
+			return redirect('../index/')
+	else:
+		form = RegisterForm()
 	return render(request, 'users/register.html', {'form': form})
 
 def login(request):
