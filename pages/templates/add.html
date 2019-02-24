@@ -1,7 +1,24 @@
 {% extends 'basic.html' %}
+{% load static %}
+
+
+{% block head %}
+<!-- Home page CSS -->
+<link href="{% static 'css/add.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
+ <header class="bg">
+    <div class="container center_div">
+      <form class="form-inline" method="post">
+		  	<div class="form-group mx-sm-3 mb-2">
+            <input type="name" class="form-control" id="username"  placeholder="Type username">
+		  </div>
+		  <button type="submit" class="btn btn-primary mb-2">Add</button>
+		</form>
+   </div>
+  </header>
 
-ADD SOMEONE PAGE!
+
 
 {% endblock %}

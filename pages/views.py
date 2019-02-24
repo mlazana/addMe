@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
 
 def index(request):
 	return render(request, "index.html",{})
 
-def add(request):
-	return render(request, "add.html",{})
-
 def contact(request):
-	return render(request, "contact.html",{})	
+	return render(request, "contact.html",{})
+
+def add(request):
+    return HttpResponse('add view')
+	
