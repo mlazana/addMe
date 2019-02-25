@@ -20,7 +20,8 @@ def add(request):
 		form = Add_Form(request.POST)
 		if form.is_valid():
 			print(form)
-			return HttpResponseRedirect('')
+			form.save()
+			return redirect('login')
 	else:
 		form = Add_Form()
 	return render(request, 'add.html', {'form': form})	

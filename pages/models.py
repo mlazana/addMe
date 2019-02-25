@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Member(models.Model):
     username = models.CharField(max_length=200)
@@ -12,5 +13,6 @@ class Member(models.Model):
 
 class Contact(models.Model):
 	username_added = models.CharField(max_length=200)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
