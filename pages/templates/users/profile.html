@@ -1,0 +1,20 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<!-- Home page CSS -->
+<link href="{% static 'css/register.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}<header class="bg">
+  {% csrf_token %}
+  <div class="container">
+    <h1>{{ user.username }}</h1>
+    <p>hello</p>
+    <hr>         
+ </header>
+  
+
+{% endblock %}

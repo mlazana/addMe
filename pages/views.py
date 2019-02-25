@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .addForm import Add_Form, RegisterForm
 from .models import Member, Contact
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
 
@@ -41,3 +42,7 @@ def login(request):
 
 def logout(request):
 	return render(request, "logout.html",{})
+
+@login_required
+def profile(request):
+	return render(request, 'users/profile.html')
