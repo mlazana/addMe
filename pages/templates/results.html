@@ -1,0 +1,23 @@
+{% extends 'basic.html'%}
+{% load static %}
+
+
+{% block head %}
+<!-- Home page CSS -->
+<link href="{% static 'css/results.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<header class="bg">
+  <div class="container center_div">
+     {% csrf_token %}
+     <hr>  
+     <p><h3><b>Facebook: </b>{{ users.facebook_account}}</h3></p> 
+     <p><h3><b>Instagram: </b>{{ users.instagram_account}}</h3></p>
+     <p><h3><b>Twitter: </b>{{ users.twitter_account}}</h3></p>
+     <p><h3><b>Github: </b>	{{ users.github_account}}</h3></p>  
+   </div>
+</header> 
+
+{% endblock %}

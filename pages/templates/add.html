@@ -12,24 +12,12 @@
     <div class="container center_div">
       <form class="form-inline" method="post">
         {% csrf_token %}
-	  	 <div class="form-group mx-sm-3 mb-2">
-	  	 	<label for="username"></label>
-            <input type="name" class="form-control" id="username"  name="username" value="{{ current_name }}" placeholder="Type username">
+	  	 <div class="form-group mx-sm-2 mb-6">
+	  	 	 <label for="username"></label>
+          <input type="name" class="form-control" id="username"  name="username" value="{{ current_name }}" placeholder="Type username">
 	      </div>
-        <button type="submit" class="btn btn-info">Info</button>
-        {{ users.facebook_account}}
-        {{ users.instagram_account}}
-        {{ users.github_account}}
-	     <header>
-
-</header>
+        <button type="submit" class="button">Search</button>
 	   </form>
-
-
-    </div>
-  
-   
-
-
-
+  </div>
+</header>
 {% endblock %}

@@ -25,7 +25,7 @@ def add(request):
 			usr = User.objects.get(username=text)
 			uid = usr.id
 			u = User_account.objects.get(user_id=uid)
-			return render(request, 'add.html', {"users": u})
+			return render(request, 'results.html', {"users": u})
 		else:
 			return redirect('add/')
 	else:
