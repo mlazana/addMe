@@ -4,6 +4,7 @@ from .addForm import RegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.db import transaction
 
 
 
@@ -46,3 +47,4 @@ def logout(request):
 @login_required
 def profile(request):
 	return render(request, 'users/profile.html')
+

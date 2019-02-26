@@ -8,13 +8,21 @@
 {% endblock %}
 
 
-{% block content %}<header class="bg">
-  {% csrf_token %}
-  <div class="container">
-    <h1>{{ user.username }}</h1>
-    <p>hello</p>
-    <hr>         
- </header>
+{% block content %}
+<div class="container">
+  <header class="bg">
+     {% csrf_token %}
+     <h1>{{ user.first_name  }} {{user.last_name}}</h1>
+     <hr> 
+     <p><h3><b>Email: </b>{{ user.email }}</h3></p> 
+     <p><h3><b>Facebook: </b>{{ user.user_account.facebook_account }}</h3></p> 
+     <p><h3><b>Instagram: </b>{{ user.user_account.instagram_account }}</h3></p>
+     <p><h3><b>Twitter: </b>{{ user.user_account.twitter_account }}</h3></p>
+     <p><h3><b>Github: </b>{{ user.user_account.github_account }}</h3></p>  
+  </header>
+
+
   
+</div>
 
 {% endblock %}
