@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .addForm import RegisterForm
+from .addForm import RegisterForm,Add_Form
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -18,12 +18,19 @@ def contact(request):
 	return render(request, "contact.html",{})
 
 def add(request):
-	usr = User.objects.get(username='ionpetro')
-	t = usr.id
-	print(t)
-	u = User_account.objects.get(user_id=t)
-	print(u.facebook_account)
-	return render(request, 'add.html', {"users": u})
+	if request.method == "POST":
+		form = Add_Form(request.POST)
+		if form.is_valid():
+			text = form.cleaned_data['username']
+			usr = User.objects.get(username=text)
+			uid = usr.id
+			u = User_account.objects.get(user_id=uid)
+			return render(request, 'add.html', {"users": u})
+		else:
+			return redirect('add/')
+	else:
+		form = Add_Form()
+	return render(request, 'add.html', {'form': form})
 	
 def register(request):
 	if request.method == "POST":

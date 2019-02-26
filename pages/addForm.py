@@ -16,5 +16,5 @@ class RegisterForm(UserCreationForm):
 		model = User
 		fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 
-class Add_Form(forms.ModelForm):
+class Add_Form(forms.Form):
 	username = forms.CharField(max_length=100)
