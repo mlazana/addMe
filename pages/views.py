@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
+from django.contrib.auth.models import User
+from .models import User_account
 
 
 
@@ -16,15 +18,12 @@ def contact(request):
 	return render(request, "contact.html",{})
 
 def add(request):
-	if (request.method == 'POST'): 
-		form = Add_Form(request.POST)
-		if form.is_valid():
-			print(form)
-			form.save()
-			return redirect('login')
-	else:
-		form = Add_Form()
-	return render(request, 'add.html', {'form': form})	
+	usr = User.objects.get(username='ionpetro')
+	t = usr.id
+	print(t)
+	u = User_account.objects.get(user_id=t)
+	print(u.facebook_account)
+	return render(request, 'add.html', {"users": u})
 	
 def register(request):
 	if request.method == "POST":
