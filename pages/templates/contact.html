@@ -19,6 +19,12 @@
       <h1>Welcome to Scrolling Nav</h1>
       <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
     </div>
+    <h2>{{ user.get_full_name }}</h2>
+      <ul>
+  <li>Username: {{ user.username }}</li>
+  <li>Location: {{ user.account.facebook_account }}</li>
+  <li>Birth Date: {{ user.account.instagram_account }}</li>
+</ul>
   </header>
 
   <section id="about">

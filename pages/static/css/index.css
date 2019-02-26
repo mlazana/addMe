@@ -3,6 +3,8 @@ body, html {
   margin: 0;
 }
 
+
+
 .bg {
 
 /* The image used */
@@ -18,3 +20,7 @@ background-size: cover;
 
 }
 
+.t {
+	padding-bottom:  5=10px ;
+	margin-bottom: : 60px ;
+}
