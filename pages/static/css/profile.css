@@ -1,0 +1,24 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+
+/* The image used */
+background-image: url("../images/add1.jpg");
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.center_div{
+    margin: 0 auto;
+    width:40% /* value of your choice which suits your alignment */
+}

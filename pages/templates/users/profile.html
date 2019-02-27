@@ -4,13 +4,14 @@
 
 {% block head %}
 <!-- Home page CSS -->
-<link href="{% static 'css/register.css' %}" rel="stylesheet">
+<link href="{% static 'css/profile.css' %}" rel="stylesheet">
 {% endblock %}
 
 
-{% block content %}
+{% block content %}/
+<header class="bg">
 <div class="container">
-  <header class="bg">
+  
      {% csrf_token %}
      <h1>{{ user.first_name  }} {{user.last_name}}</h1>
      <hr> 
@@ -19,10 +20,10 @@
      <p><h3><b>Instagram: </b>{{ user.user_account.instagram_account }}</h3></p>
      <p><h3><b>Twitter: </b>{{ user.user_account.twitter_account }}</h3></p>
      <p><h3><b>Github: </b>	{{ user.user_account.github_account }}</h3></p>  
-  </header>
+ 
 
 
   
 </div>
-
+ </header>
 {% endblock %}

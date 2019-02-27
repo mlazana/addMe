@@ -1,3 +1,5 @@
+
+
 * {box-sizing: border-box}
 
 
@@ -52,4 +54,8 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+.registerbtn{
+  background-color:  #D19665 ;
 }
