@@ -17,6 +17,8 @@ def index(request):
 def contact(request):
 	return render(request, "contact.html",{})
 
+
+# Add form reads input from the user in order to return social media profiles
 def add(request):
 	if request.method == "POST":
 		form = Add_Form(request.POST)
